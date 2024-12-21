@@ -4,7 +4,7 @@ import { OrbitControls } from '@react-three/drei';
 import Dashboard from './components/Dashboard';
 
 // cargar dinámica de TournamentScene sin SSR
-// const TournamentScene = React.lazy(() => import('./components/TournamentScene'));
+ const TournamentScene = React.lazy(() => import('./components/TournamentScene'));
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         shadows
       >
         <React.Suspense fallback={null}>
-          {/*}<TournamentScene />*/}
+          <TournamentScene />
           <OrbitControls
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2}
