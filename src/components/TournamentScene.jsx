@@ -4,6 +4,7 @@ import React from 'react';
 import { Environment, Grid, Line, Sphere } from "@react-three/drei";
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
+import { CourtParticles } from './CourtParticles'
 
 export default function TournamentScene() {
 
@@ -81,7 +82,7 @@ export default function TournamentScene() {
           opacity={0.7}
         />
         <Grid
-          args={[10, 6]}
+          args={[10, 5]}
           position-y={0.01}
           cellSize={0.5}
           cellColor="#4a9eff"
@@ -89,6 +90,9 @@ export default function TournamentScene() {
           fadeDistance={2}
         />
       </group>
+
+      {/* efecto de las partículas */}
+      <CourtParticles count={6000} color="#4a9eff" />
 
       {/* holograma en el centro*/}
       <group ref={holoRef}>
@@ -114,7 +118,6 @@ export default function TournamentScene() {
             opacity={0.3}
           />
         ))}
-
       </group>
 
       {/* iluminación */}
